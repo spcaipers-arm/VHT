@@ -112,11 +112,17 @@ ul.hierarchy {
 }
 
 em {
-	color: #000000;
 	font-style:italic;
 }
 
-
+code {
+	font-family: monospace;
+	font-size: 85%;
+	line-height: 1.1;
+	background-color: var(--arm_light_gray2);
+	border-radius: 6px;
+	padding: 0.2em 0.4em;
+}
 
 /*  Tables */
 table.cmtab1 {
@@ -201,8 +207,23 @@ div.del
 
 h1 {
 	font-size: 150%;
+	border-top-color: var(--arm_light_gray3);
+	border-top-width: 2px;
+	border-top-style: solid;
+	padding: 1em 0 0;
+	margin-top: 0.5em;
+	margin-bottom: 0.75em;
 }
-
+/*
+h1:before {
+	margin-bottom: 1em;
+	content: "";
+	background-color: var(--arm_light_gray3);
+	height: 2px;
+	display: block;
+	width: 100%;
+}
+*/
 .title {
 	font-size: 150%;
 	font-weight: bold;
@@ -211,10 +232,14 @@ h1 {
 
 h2 {
 	font-size: 120%;
+	margin-top: 1.25em;
+	margin-bottom: 0.25em;
 }
 
 h3 {
 	font-size: 100%;
+	margin-top: 1.25em;
+	margin-bottom: 0.25em;
 }
 
 h4 {
@@ -345,30 +370,29 @@ dl.el {
 	margin-left: -1cm;
 }
 
+
 pre.fragment {
-        border: 1px solid #C4CFE5;
-        background-color: #FBFCFD;
-        padding: 4px 6px;
-        margin: 4px 8px 4px 2px;
-        overflow: auto;
-        word-wrap: break-word;
-        font-size:  9pt;
-        line-height: 125%;
-        font-family: monospace, fixed;
-        font-size: 105%;
+	font-family: monospace;
+	background-color: var(--arm_light_gray2);
+	border-radius: 6px;
+	padding: 0.2em 0.4em;
+	font-size: 85%;
+	line-height: 1.45;
 }
 
 div.fragment {
-        padding: 4px;
-        margin: 4px;
-	background-color: #FBFCFD;
-	border: 1px solid #C3CFE6;
+	font-family: monospace;
+	background-color: var(--arm_light_gray2);
+	border-radius: 6px;
+	padding: 0.2em 0.4em;
+	font-size: 85%;
+	line-height: 1.45;
 }
 
 div.line {
-	font-family: monospace, fixed;
-        font-size: 13px;
-	line-height: 1.0;
+	font-family: monospace;
+	font-size: 100%;
+	line-height: 1.45;
 	text-wrap: unrestricted;
 	white-space: -moz-pre-wrap; /* Moz */
 	white-space: -pre-wrap;     /* Opera 4-6 */
@@ -924,7 +948,7 @@ table.doxtable th {
 }
 
 table.doxtable tr:nth-child(even) {
-	background-color: var(--arm_light_gray3);
+	background-color: #F9FAFC; /*var(--arm_light_gray3); */
 }
 
 table.fieldtable {

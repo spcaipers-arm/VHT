@@ -60,7 +60,17 @@ var NAVTREE =
         ] ]
       ] ]
     ] ],
-    [ "Run with MDK-Professional", "run_mdk_pro.html", null ],
+    [ "Debug with Arm Development Studio", "debug_ds.html", [
+      [ "Tools Installation and set up", "debug_ds.html#ds_setup", null ],
+      [ "Start Virtual Hardware Target", "debug_ds.html#ds_vht_start", null ],
+      [ "Connect to Target in Arm DS", "debug_ds.html#ds_connect", null ]
+    ] ],
+    [ "Run with MDK-Professional", "run_mdk_pro.html", [
+      [ "Tools Installation", "run_mdk_pro.html#mdk_vht_install", null ],
+      [ "Project Configuration", "run_mdk_pro.html#mdk_project_config", null ],
+      [ "Program Build and Debug", "run_mdk_pro.html#mdk_program_run", null ],
+      [ "Project Export", "run_mdk_pro.html#mdk_cprj_export", null ]
+    ] ],
     [ "VHT CLI Script", "md_src_vht_doc.html", [
       [ "Requirements", "md_src_vht_doc.html#autotoc_md2", null ],
       [ "Usage", "md_src_vht_doc.html#autotoc_md3", null ],
@@ -75,7 +85,7 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"index.html"
+"debug_ds.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
