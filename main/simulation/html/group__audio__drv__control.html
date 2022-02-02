@@ -1,11 +1,12 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- HTML header for doxygen 1.9.2-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>Audio Driver Controls</title>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Simulation: Audio Driver Controls</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
-<link href="extra_stylesheet.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="printComponentTabs.js"></script>
@@ -22,6 +23,8 @@
   $(document).ready(function() { init_search(); });
 /* @license-end */
 </script>
+<link href="$extra_stylesheet" rel="stylesheet" type="text/css" />
+<link href="extra_stylesheet.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -29,13 +32,14 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 55px;">
-  <td style="padding: 1em;"id="projectlogo"><img alt="Logo" src="arm.png"/></td>
+  <td id="projectlogo" style="padding: 1em;"><img alt="Logo" src="arm.png"/></td>
   <td style="padding-left: 2em; padding-bottom: 1em;padding-top: 1em;">
    <div id="projectname">Virtual Hardware
    &#160;<span id="projectnumber">Version 0.2 - beta</span>
    </div>
    <div id="projectbrief">Simulation Models with Virtual Interfaces for Test Automation</div>
   </td>
+  <!--END !PROJECT_NAME-->
    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
           <img id="MSearchSelect" src="search/mag_sel.svg"
@@ -114,89 +118,33 @@ $(document).ready(function(){initNavTree('group__audio__drv__control.html',''); 
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:ga19fd4bec18bcaa695ce70e60785346fa"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__audio__drv__control.html#ga19fd4bec18bcaa695ce70e60785346fa">AUDIO_DRV_CONTROL_TX_ENABLE</a>&#160;&#160;&#160;(1UL &lt;&lt; 0)</td></tr>
-<tr class="memdesc:ga19fd4bec18bcaa695ce70e60785346fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable Transmitter.  <a href="group__audio__drv__control.html#ga19fd4bec18bcaa695ce70e60785346fa">More...</a><br /></td></tr>
+<tr class="memitem:ga19fd4bec18bcaa695ce70e60785346fa"><td class="memItemLeft" align="right" valign="top"><a id="ga19fd4bec18bcaa695ce70e60785346fa" name="ga19fd4bec18bcaa695ce70e60785346fa"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>AUDIO_DRV_CONTROL_TX_ENABLE</b>&#160;&#160;&#160;(1UL &lt;&lt; 0)</td></tr>
+<tr class="memdesc:ga19fd4bec18bcaa695ce70e60785346fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable Transmitter. <br /></td></tr>
 <tr class="separator:ga19fd4bec18bcaa695ce70e60785346fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaf6f490a2e326fe5db6a2ae3d3ff90d08"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__audio__drv__control.html#gaf6f490a2e326fe5db6a2ae3d3ff90d08">AUDIO_DRV_CONTROL_RX_ENABLE</a>&#160;&#160;&#160;(1UL &lt;&lt; 1)</td></tr>
-<tr class="memdesc:gaf6f490a2e326fe5db6a2ae3d3ff90d08"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable Receiver.  <a href="group__audio__drv__control.html#gaf6f490a2e326fe5db6a2ae3d3ff90d08">More...</a><br /></td></tr>
+<tr class="memitem:gaf6f490a2e326fe5db6a2ae3d3ff90d08"><td class="memItemLeft" align="right" valign="top"><a id="gaf6f490a2e326fe5db6a2ae3d3ff90d08" name="gaf6f490a2e326fe5db6a2ae3d3ff90d08"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>AUDIO_DRV_CONTROL_RX_ENABLE</b>&#160;&#160;&#160;(1UL &lt;&lt; 1)</td></tr>
+<tr class="memdesc:gaf6f490a2e326fe5db6a2ae3d3ff90d08"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable Receiver. <br /></td></tr>
 <tr class="separator:gaf6f490a2e326fe5db6a2ae3d3ff90d08"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga1c054890d0d31601c71ede31ae8d9f7c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__audio__drv__control.html#ga1c054890d0d31601c71ede31ae8d9f7c">AUDIO_DRV_CONTROL_TX_DISABLE</a>&#160;&#160;&#160;(1UL &lt;&lt; 2)</td></tr>
-<tr class="memdesc:ga1c054890d0d31601c71ede31ae8d9f7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disable Transmitter.  <a href="group__audio__drv__control.html#ga1c054890d0d31601c71ede31ae8d9f7c">More...</a><br /></td></tr>
+<tr class="memitem:ga1c054890d0d31601c71ede31ae8d9f7c"><td class="memItemLeft" align="right" valign="top"><a id="ga1c054890d0d31601c71ede31ae8d9f7c" name="ga1c054890d0d31601c71ede31ae8d9f7c"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>AUDIO_DRV_CONTROL_TX_DISABLE</b>&#160;&#160;&#160;(1UL &lt;&lt; 2)</td></tr>
+<tr class="memdesc:ga1c054890d0d31601c71ede31ae8d9f7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disable Transmitter. <br /></td></tr>
 <tr class="separator:ga1c054890d0d31601c71ede31ae8d9f7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaf2030e115e7ab830c9524d64ca46fafc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__audio__drv__control.html#gaf2030e115e7ab830c9524d64ca46fafc">AUDIO_DRV_CONTROL_RX_DISABLE</a>&#160;&#160;&#160;(1UL &lt;&lt; 3)</td></tr>
-<tr class="memdesc:gaf2030e115e7ab830c9524d64ca46fafc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disable Receiver.  <a href="group__audio__drv__control.html#gaf2030e115e7ab830c9524d64ca46fafc">More...</a><br /></td></tr>
+<tr class="memitem:gaf2030e115e7ab830c9524d64ca46fafc"><td class="memItemLeft" align="right" valign="top"><a id="gaf2030e115e7ab830c9524d64ca46fafc" name="gaf2030e115e7ab830c9524d64ca46fafc"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>AUDIO_DRV_CONTROL_RX_DISABLE</b>&#160;&#160;&#160;(1UL &lt;&lt; 3)</td></tr>
+<tr class="memdesc:gaf2030e115e7ab830c9524d64ca46fafc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disable Receiver. <br /></td></tr>
 <tr class="separator:gaf2030e115e7ab830c9524d64ca46fafc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description</h2>
+<p >Definitions of control parameters. </p>
 <p >Audio driver control parameters for use in <a class="el" href="group__arm__vsi__audio.html#ga907ce53168efb2f29dce946226fa52a1">AudioDrv_Control</a> function. </p>
-<h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="ga19fd4bec18bcaa695ce70e60785346fa" name="ga19fd4bec18bcaa695ce70e60785346fa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga19fd4bec18bcaa695ce70e60785346fa">&#9670;&nbsp;</a></span>AUDIO_DRV_CONTROL_TX_ENABLE</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define AUDIO_DRV_CONTROL_TX_ENABLE&#160;&#160;&#160;(1UL &lt;&lt; 0)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p >Enable transmit operation </p>
-
-</div>
-</div>
-<a id="gaf6f490a2e326fe5db6a2ae3d3ff90d08" name="gaf6f490a2e326fe5db6a2ae3d3ff90d08"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaf6f490a2e326fe5db6a2ae3d3ff90d08">&#9670;&nbsp;</a></span>AUDIO_DRV_CONTROL_RX_ENABLE</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define AUDIO_DRV_CONTROL_RX_ENABLE&#160;&#160;&#160;(1UL &lt;&lt; 1)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p >Enable receive operation </p>
-
-</div>
-</div>
-<a id="ga1c054890d0d31601c71ede31ae8d9f7c" name="ga1c054890d0d31601c71ede31ae8d9f7c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga1c054890d0d31601c71ede31ae8d9f7c">&#9670;&nbsp;</a></span>AUDIO_DRV_CONTROL_TX_DISABLE</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define AUDIO_DRV_CONTROL_TX_DISABLE&#160;&#160;&#160;(1UL &lt;&lt; 2)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p >Disable transmit operation </p>
-
-</div>
-</div>
-<a id="gaf2030e115e7ab830c9524d64ca46fafc" name="gaf2030e115e7ab830c9524d64ca46fafc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaf2030e115e7ab830c9524d64ca46fafc">&#9670;&nbsp;</a></span>AUDIO_DRV_CONTROL_RX_DISABLE</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define AUDIO_DRV_CONTROL_RX_DISABLE&#160;&#160;&#160;(1UL &lt;&lt; 3)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p >Disable receive operation </p>
-
-</div>
-</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="footer">
-	Copyright &copy; 2021 Arm Limited (or its affiliates). All rights reserved.
+	Copyright &copy; 2021-2022 Arm Limited (or its affiliates). All rights reserved.
 	<!-- Use script below for auto-inserting date, project name, version, etc  -->
 	<!-- <script type="text/javascript">
         writeFooter.call(this);

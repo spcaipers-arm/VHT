@@ -1,11 +1,12 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- HTML header for doxygen 1.9.2-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>Run AMI with GitHub Actions</title>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Infrastructure: Run AMI with GitHub Actions</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
-<link href="extra_stylesheet.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="printComponentTabs.js"></script>
@@ -22,6 +23,8 @@
   $(document).ready(function() { init_search(); });
 /* @license-end */
 </script>
+<link href="$extra_stylesheet" rel="stylesheet" type="text/css" />
+<link href="extra_stylesheet.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -29,13 +32,14 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 55px;">
-  <td style="padding: 1em;"id="projectlogo"><img alt="Logo" src="arm.png"/></td>
+  <td id="projectlogo" style="padding: 1em;"><img alt="Logo" src="arm.png"/></td>
   <td style="padding-left: 2em; padding-bottom: 1em;padding-top: 1em;">
    <div id="projectname">Virtual Hardware
    &#160;<span id="projectnumber">Version 0.2 - beta</span>
    </div>
    <div id="projectbrief">Infrastructure Service and Tool Integration</div>
   </td>
+  <!--END !PROJECT_NAME-->
    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
           <img id="MSearchSelect" src="search/mag_sel.svg"
@@ -340,14 +344,15 @@ Example</h3>
 </div><!-- fragment --><h3><a class="anchor" id="autotoc_md11"></a>
 Use Action</h3>
 <p >You can now the <a href="https://github.com/ARM-software/VHT-AMI">VHT-AMI action</a> by referencing the v1 branch as shown below:</p>
-<div class="fragment"><div class="line">uses: Arm-Software/VHT-AMI@v1</div>
-<div class="line">with:</div>
-<div class="line">  vht_in:</div>
-<div class="line">  instance_id: ${{ secrets.AWS_INSTANCE_ID }}</div>
-<div class="line">  access_key_id: ${{ secrets.AWS_INSTANCE_ID }}</div>
-<div class="line">  secret_key_id: ${{ secrets.AWS_ACCESS_KEY_SECRET }}</div>
-<div class="line">  aws_region: &quot;eu-west-1&quot;</div>
-<div class="line">  s3_bucket_name: my_bucket</div>
+<div class="fragment"><div class="line">uses: Arm-Software/VHT-AMI@v2</div>
+<div class="line">  with:</div>
+<div class="line">    vht_in: ./vht_folder</div>
+<div class="line">    ec2_instance_id: ${{ secrets.AWS_INSTANCE_ID }}</div>
+<div class="line">    s3_bucket_name: my_bucket</div>
+<div class="line">  env:</div>
+<div class="line">    AWS_ACCESS_KEY_ID: ${{ secrets.AWS_INSTANCE_ID }}</div>
+<div class="line">    AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_ACCESS_KEY_SECRET }}</div>
+<div class="line">    AWS_DEFAULT_REGION: &quot;eu-west-1&quot;</div>
 </div><!-- fragment --><p >The <a href="https://github.com/ARM-software/VHT-AMI">VHT-AMI action</a> is controlled using the following parameters.</p>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -355,14 +360,28 @@ Use Action</h3>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyLeft"><code>vht_in:</code>   </td><td class="markdownTableBodyLeft">Folder to the staged files. The <b>vht.yml</b> file should be provided in the root folder.    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyLeft"><code>instance_id:</code>   </td><td class="markdownTableBodyLeft">Instance ID of the AMI stored as GitHub secret <em>secrets.AWS_INSTANCE_ID</em>.    </td></tr>
+<td class="markdownTableBodyLeft"><code>ec2_instance_id:</code>   </td><td class="markdownTableBodyLeft">EC2 Instance ID of the AMI stored as GitHub secret <em>secrets.AWS_INSTANCE_ID</em>.    </td></tr>
 <tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft"><code>ec2_instance_type:</code>   </td><td class="markdownTableBodyLeft">EC2 Instance Type that will be assign to-be-created EC2 Instance. Required when no instance id supplied.    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft"><code>ec2_security_group_id:</code>   </td><td class="markdownTableBodyLeft">EC2 Security Group that will be assign a to-be-created EC2 Instance. Required when no instance id supplied.    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft"><code>iam_profile:</code>   </td><td class="markdownTableBodyLeft">IAM Profile to be assigned a to-be-created EC2 Instance.    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft"><code>subnet_id:</code>   </td><td class="markdownTableBodyLeft">Subnet ID that will be assign a to-be-created EC2 Instance.    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft"><code>terminate_ec2_instance:</code>   </td><td class="markdownTableBodyLeft">Terminate EC2 Instance when the build is finished. Default=false    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft"><code>vht_ami_version:</code>   </td><td class="markdownTableBodyLeft">VHT AMI Version to be used. This field is overwritten if <code>vht_ami_id</code> field is present.    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft"><code>vht_ami_id:</code>   </td><td class="markdownTableBodyLeft">VHT AMI ID when the EC2 instance has been created. This fields overwrites vht_ami_version.    </td></tr>
+<tr class="markdownTableRowEven">
 <td class="markdownTableBodyLeft"><code>access_key_id:</code>   </td><td class="markdownTableBodyLeft">Access key to AMI stored as GitHub secret <em>secrets.AWS_ACCESS_KEY_ID</em>.    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyLeft"><code>secret_key_id:</code>   </td><td class="markdownTableBodyLeft">Secret key to AMI stored as GitHub secret <em>secrets.AWS_SECRET_KEY</em>.    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyLeft"><code>aws_region:</code>   </td><td class="markdownTableBodyLeft">Name of the region where your EC2 and S3 instances are located.    </td></tr>
+<td class="markdownTableBodyLeft"><code>secret_key_id:</code>   </td><td class="markdownTableBodyLeft">Secret key to AMI stored as GitHub secret <em>secrets.AWS_SECRET_KEY</em>.    </td></tr>
 <tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft"><code>aws_region:</code>   </td><td class="markdownTableBodyLeft">Name of the region where your EC2 and S3 instances are located.    </td></tr>
+<tr class="markdownTableRowOdd">
 <td class="markdownTableBodyLeft"><code>s3_bucket_name:</code>   </td><td class="markdownTableBodyLeft">Name of the temporary storage an S3 bucket is used.   </td></tr>
 </table>
 </div></div><!-- contents -->
@@ -372,7 +391,7 @@ Use Action</h3>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="footer">
-	Copyright &copy; 2021 Arm Limited (or its affiliates). All rights reserved.
+	Copyright &copy; 2021-2022 Arm Limited (or its affiliates). All rights reserved.
 	<!-- Use script below for auto-inserting date, project name, version, etc  -->
 	<!-- <script type="text/javascript">
         writeFooter.call(this);
