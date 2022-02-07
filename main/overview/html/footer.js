@@ -1,3 +1,3 @@
 function writeFooter()  {
-    document.write('Generated on Wed Feb  2 2022 09:38:16 for Overview Version 0.2 - beta by Arm Ltd. All rights reserved.');
+    document.write('Generated on Mon Feb  7 2022 14:20:50 for Overview Version 0.2 - beta by Arm Ltd. All rights reserved.');
 };
