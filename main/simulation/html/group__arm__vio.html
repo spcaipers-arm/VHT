@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Simulation: Virtual I/O (VIO)</title>
+<title>Simulation: Virtual Input/Output (VIO)</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -107,16 +107,50 @@ $(document).ready(function(){initNavTree('group__arm__vio.html',''); initResizab
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">Virtual I/O (VIO)<div class="ingroups"><a class="el" href="group__arm__cmvp.html">Virtual Peripherals</a></div></div></div>
+  <div class="summary">
+<a href="#groups">Content</a>  </div>
+  <div class="headertitle"><div class="title">Virtual Input/Output (VIO)<div class="ingroups"><a class="el" href="group__arm__cmvp.html">Virtual Peripherals</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
 <p>Controls simple I/O such as LED and switches.  
-</p>
+<a href="#details">More...</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="groups" name="groups"></a>
+Content</h2></td></tr>
+<tr class="memitem:group__arm__vio__api"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__arm__vio__api.html">VIO API</a></td></tr>
+<tr class="memdesc:group__arm__vio__api"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual Input/Output (VIO) API. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__arm__vio__py"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__arm__vio__py.html">VIO Python interface</a></td></tr>
+<tr class="memdesc:group__arm__vio__py"><td class="mdescLeft">&#160;</td><td class="mdescRight">VIO python interface. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__arm__vio__cases"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__arm__vio__cases.html">Using VIO</a></td></tr>
+<tr class="memdesc:group__arm__vio__cases"><td class="mdescLeft">&#160;</td><td class="mdescRight">Using Virtual I/O Interface (VIO) <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Description</h2>
 <p >Controls simple I/O such as LED and switches. </p>
-<p >The <b>Virtual I/O Interface (VIO)</b> connects a <a href="https://arm-software.github.io/CMSIS_5/Driver/html/group__vio__interface__gr.html"><b>CMSIS-Driver VIO</b></a> to Python and allows test scripts that stimulate simple I/O such as switches and LEDs.</p>
-<p >Its support will become available in future releases according to the <a href="../../overview/html/index.html#Roadmap">Product Roadmap</a>. </p>
-</div><!-- contents -->
+<p >The <b>Virtual Input/Output Interface (VIO)</b> implements a register-based peripheral for simple digital I/Os. It can be used to simulate control of such items as LEDs, switches, digital signals and others. Figure below demonstrates the concept.</p>
+<div class="image">
+<img src="vio_structure.png" alt=""/>
+</div>
+<p >The following files define the access to the VIO peripheral.</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadLeft">File   </th><th class="markdownTableHeadLeft">Description    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft"><a href="https://github.com/ARM-software/VHT/blob/main/interface/include/arm_vio.h">./interface/include/arm_vio.h</a>   </td><td class="markdownTableBodyLeft"><a class="el" href="group__arm__vio__api.html">VIO API</a> header file    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft"><a href="https://github.com/ARM-software/VHT/blob/main/interface/python/arm_vio.py">./interface/python/arm_vio.py</a>   </td><td class="markdownTableBodyLeft"><a class="el" href="group__arm__vio__py.html">VIO Python interface</a> script template    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft"><a href="https://github.com/ARM-software/VHT/blob/main/interface/vio/vio_vht.c">./interface/vio/vio_vht.c</a>   </td><td class="markdownTableBodyLeft">Implementation of CMSIS-Driver VIO for Arm Virtual Hardware Target   </td></tr>
+</table>
+<p >A read or write access to a VIO peripheral via its <a class="el" href="group__arm__vio__api.html">API</a> triggers execution of a corresponding function in the Python script that implements the <a class="el" href="group__arm__vio__py.html">VIO Python interface</a> instance. The concept is shown on the figure below.</p>
+<div class="image">
+<img src="using_vio_uml.png" alt=""/>
+<div class="caption">
+Using VIO peripheral</div></div>
+ </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
